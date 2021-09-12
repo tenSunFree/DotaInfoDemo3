@@ -1,0 +1,21 @@
+CREATE TABLE  Bill_Photo_Entity(
+    id INTEGER NOT NULL PRIMARY KEY,
+    albumId INTEGER NOT NULL,
+    title TEXT DEFAULT "",
+    url TEXT DEFAULT "",
+    thumbnailUrl TEXT DEFAULT ""
+);
+
+selectBillPhotoAll:
+SELECT *
+FROM Bill_Photo_Entity;
+
+insertBillPhoto:
+INSERT OR REPLACE
+INTO Bill_Photo_Entity (
+    albumId,
+    id,
+    title,
+    url,
+    thumbnailUrl
+) VALUES (?,?, ?, ?, ?);
